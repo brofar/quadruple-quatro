@@ -27,7 +27,7 @@
     },
     {
         "level": 1,
-        "name": "Bite_Bug",
+        "name": "Bite Bug",
         "rarity": 1,
         "element": "none",
         "total": 12,
@@ -40,7 +40,7 @@
     },
     {
         "level": 1,
-        "name": "Red_Bat",
+        "name": "Red Bat",
         "rarity": 1,
         "element": "none",
         "total": 10,
@@ -92,7 +92,7 @@
     },
     {
         "level": 1,
-        "name": "Fastitocalon_F",
+        "name": "Fastitocalon F",
         "rarity": 1,
         "element": "earth",
         "total": 11,
@@ -105,7 +105,7 @@
     },
     {
         "level": 1,
-        "name": "Blood_Soul",
+        "name": "Blood Soul",
         "rarity": 1,
         "element": "none",
         "total": 10,
@@ -183,7 +183,7 @@
     },
     {
         "level": 2,
-        "name": "Glacial_Eye",
+        "name": "Glacial Eye",
         "rarity": 1,
         "element": "ice",
         "total": 17,
@@ -274,7 +274,7 @@
     },
     {
         "level": 2,
-        "name": "Grand_Mantis",
+        "name": "Grand Mantis",
         "rarity": 1,
         "element": "none",
         "total": 15,
@@ -313,7 +313,7 @@
     },
     {
         "level": 3,
-        "name": "Tri_Face",
+        "name": "Tri Face",
         "rarity": 1,
         "element": "poison",
         "total": 18,
@@ -339,7 +339,7 @@
     },
     {
         "level": 3,
-        "name": "Snow_Lion",
+        "name": "Snow Lion",
         "rarity": 1,
         "element": "ice",
         "total": 16,
@@ -378,7 +378,7 @@
     },
     {
         "level": 3,
-        "name": "Death_Claw",
+        "name": "Death Claw",
         "rarity": 1,
         "element": "fire",
         "total": 17,
@@ -417,7 +417,7 @@
     },
     {
         "level": 3,
-        "name": "Abyss_Worm",
+        "name": "Abyss Worm",
         "rarity": 1,
         "element": "earth",
         "total": 17,
@@ -456,7 +456,7 @@
     },
     {
         "level": 4,
-        "name": "T_Rexaur",
+        "name": "T Rexaur",
         "rarity": 1,
         "element": "none",
         "total": 19,
@@ -534,7 +534,7 @@
     },
     {
         "level": 4,
-        "name": "Blue_Dragon",
+        "name": "Blue Dragon",
         "rarity": 1,
         "element": "poison",
         "total": 18,
@@ -573,7 +573,7 @@
     },
     {
         "level": 5,
-        "name": "Iron_Giant",
+        "name": "Iron Giant",
         "rarity": 1,
         "element": "none",
         "total": 22,
@@ -664,7 +664,7 @@
     },
     {
         "level": 5,
-        "name": "Ruby_Dragon",
+        "name": "Ruby Dragon",
         "rarity": 2,
         "element": "fire",
         "total": 20,
@@ -690,7 +690,7 @@
     },
     {
         "level": 5,
-        "name": "Tonberry_King",
+        "name": "Tonberry King",
         "rarity": 2,
         "element": "none",
         "total": 21,
@@ -703,7 +703,7 @@
     },
     {
         "level": 5,
-        "name": "Wedge_Biggs",
+        "name": "Wedge Biggs",
         "rarity": 2,
         "element": "none",
         "total": 21,
@@ -716,7 +716,7 @@
     },
     {
         "level": 6,
-        "name": "Fujin_Raijin",
+        "name": "Fujin Raijin",
         "rarity": 3,
         "element": "none",
         "total": 22,
@@ -742,7 +742,7 @@
     },
     {
         "level": 6,
-        "name": "X_ATM092",
+        "name": "X ATM092",
         "rarity": 3,
         "element": "none",
         "total": 22,
@@ -833,7 +833,7 @@
     },
     {
         "level": 6,
-        "name": "Shumi_Tribe",
+        "name": "Shumi Tribe",
         "rarity": 3,
         "element": "none",
         "total": 23,
@@ -872,7 +872,7 @@
     },
     {
         "level": 7,
-        "name": "Jumbo_Cactuar",
+        "name": "Jumbo Cactuar",
         "rarity": 3,
         "element": "none",
         "total": 24,
@@ -885,7 +885,7 @@
     },
     {
         "level": 7,
-        "name": "Tri_Point",
+        "name": "Tri Point",
         "rarity": 3,
         "element": "lightning",
         "total": 23,
@@ -911,7 +911,7 @@
     },
     {
         "level": 7,
-        "name": "Mobile_Type_8",
+        "name": "Mobile Type 8",
         "rarity": 3,
         "element": "none",
         "total": 24,
@@ -963,7 +963,7 @@
     },
     {
         "level": 7,
-        "name": "Red_Giant",
+        "name": "Red Giant",
         "rarity": 3,
         "element": "none",
         "total": 25,
@@ -989,7 +989,7 @@
     },
     {
         "level": 7,
-        "name": "Ultima_Weapon",
+        "name": "Ultima Weapon",
         "rarity": 3,
         "element": "none",
         "total": 24,
@@ -1002,7 +1002,7 @@
     },
     {
         "level": 8,
-        "name": "Chubby_Chocobo",
+        "name": "Chubby Chocobo",
         "rarity": 3,
         "element": "none",
         "total": 25,
