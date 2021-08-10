@@ -80,22 +80,22 @@ class Game {
         let adjacentCards = this.Surroundings(this.board, x, y);
 
         if (adjacentCards.up) {
-            if (card.top > adjacentCards.up.card.bottom) {
-                this.FlipCard(x + 1, y, playerName);
-            }
-        }
-        if (adjacentCards.down) {
-            if (card.bottom > adjacentCards.down.card.top) {
+            if (card.top > adjacentCards.up.card.bottom && adjacentCards.up.card.flip != playerName) {
                 this.FlipCard(x - 1, y, playerName);
             }
         }
+        if (adjacentCards.down) {
+            if (card.bottom > adjacentCards.down.card.top && adjacentCards.down.card.flip != playerName) {
+                this.FlipCard(x + 1, y, playerName);
+            }
+        }
         if (adjacentCards.left) {
-            if (card.left > adjacentCards.left.card.right) {
+            if (card.left > adjacentCards.left.card.right && adjacentCards.left.card.flip != playerName) {
                 this.FlipCard(x, y - 1, playerName);
             }
         }
         if (adjacentCards.right) {
-            if (card.right > adjacentCards.right.card.left) {
+            if (card.right > adjacentCards.right.card.left && adjacentCards.right.card.flip != playerName) {
                 this.FlipCard(x, y + 1, playerName);
             }
         }
@@ -108,15 +108,15 @@ class Game {
 
     // Flips a card on the board
     FlipCard(x, y, player) {
-        this.board[x][y].flip = player;
         console.log(`Flipping card at ${x},${y}`);
+        this.board[x][y].flip = player;
         // Do animation.
     }
 
     NextTurn() {
         const playerIndex = this.players.findIndex(x => x.name != this.currentTurn);
         this.currentTurn = this.players[playerIndex].name;
-        console.log (`It is now ${this.currentTurn}'s turn.`);
+        //console.log(`It is now ${this.currentTurn}'s turn.`);
     }
 
     // Get the value of a given coordinate in a matrix or null if it's out of range.
@@ -130,7 +130,6 @@ class Game {
         } catch (e) {
             value = NO_VALUE;
         }
-
         return value;
     }
 
