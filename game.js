@@ -5,16 +5,22 @@
 
 class Game {
     constructor(playerOneName, deckOne, playerTwoName, deckTwo) {
-        this.players = [];
-        this.players.push({ name: playerOneName });
-        this.players.push({ name: playerTwoName });
+        this.players = {};
 
         // Create an empty 3 x 3 board
         this.board = [new Array(3), new Array(3), new Array(3)];
 
-        // Assign hands
-        this.AssignCards(playerOneName, deckOne);
-        this.AssignCards(playerTwoName, deckTwo);
+        // Assign hands        
+        this.players[playerOneName] = {
+            hand: this.AssignCards(deckOne)
+        };
+        this.players[playerTwoName] = {
+            hand: this.AssignCards(deckTwo)
+        };
+
+        for (const key in Object.keys(this.players)) {
+            console.log(`${this.players[key]} hand: ${this.players[key].hand.map(card => { return card.name })}`);
+        }
 
         if (this.CoinFlip()) {
             this.currentTurn = playerOneName;
@@ -25,20 +31,17 @@ class Game {
         console.log(`New game started between ${playerOneName} vs. ${playerTwoName}. ${this.currentTurn} plays first.`);
     }
 
-    AssignCards(player, deck) {
+    AssignCards(deck) {
         // Return 5 random cards from the deck to assign to the player
         // Eventually, allow player to choose their hand.
         // Expects deck to be array of objects
-        const playerIndex = this.players.findIndex(x => x.name == player);
         let playerHand = [];
         for (let i = 0; i < 5; i++) {
             let cardIndex = Math.floor(Math.random() * deck.length);
             let card = deck.splice(cardIndex, 1)[0];
             playerHand.push(card);
         }
-
-        this.players[playerIndex].hand = playerHand;
-        console.log(`${player} hand: ${this.players[playerIndex].hand.map(card => { return card.name })}`);
+        return playerHand;
     }
 
     // Returns true or false, randomly.
@@ -51,7 +54,9 @@ class Game {
     }
 
     // Add a card to the board
-    PlaceCard(x, y, playerName, card) {
+    async PlaceCard(x, y, playerName, card) {
+
+        console.log('turn check');
 
         // Check whose turn it is.
         if (this.currentTurn != playerName) {
@@ -59,12 +64,14 @@ class Game {
             return;
         }
 
+        console.log('overlap check');
         // Disallow placing a card on another card.
         if (this.board[x][y]) {
             console.warn(`${x},${y} already taken, ${playerName}. (Add error handling here.)`)
             return;
         }
 
+        console.log('add to board');
         // Add the card to the board
         this.board[x][y] = {
             "card": card,
@@ -72,9 +79,9 @@ class Game {
             "flip": playerName
         }
 
-        let player = this.players.find(x => x.name == playerName);
-        console.log(`${player.name} played ${card.name} (T${card.top} / L${card.left} / B${card.bottom} / R${card.right}) on ${x},${y}`);
-
+        console.log(`${playerName} played ${card.name} (T${card.top} / L${card.left} / B${card.bottom} / R${card.right}) on ${x},${y}`);
+        
+        console.log('do flips');
         // Check adjacent tiles for flips
         // Make this its own method.
         let adjacentCards = this.Surroundings(this.board, x, y);
@@ -102,8 +109,11 @@ class Game {
 
         // Check for game end
 
+        console.log('calculate next turn')
         // Next turn
         this.NextTurn();
+
+        return Promise.resolve(true);
     }
 
     // Flips a card on the board
@@ -116,7 +126,6 @@ class Game {
     NextTurn() {
         const playerIndex = this.players.findIndex(x => x.name != this.currentTurn);
         this.currentTurn = this.players[playerIndex].name;
-        //console.log(`It is now ${this.currentTurn}'s turn.`);
     }
 
     // Get the value of a given coordinate in a matrix or null if it's out of range.
